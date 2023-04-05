@@ -1,28 +1,29 @@
 package ru.netology;
 
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.SelenideElement.*;
-import static com.google.common.annotations.VisibleForTesting.*;
+
 
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
-import static java.nio.file.attribute.AclEntryPermission.DELETE;
+
 
     public class CardDeliveryTest {
 
         @BeforeEach
         public void openPage() {
             open("http://localhost:9999/");
+        }
+        static void setUp() {
+            Configuration.headless = true;
         }
 
         @Test
